@@ -1,0 +1,31 @@
+
+.navBar-container{
+  /* background-color: #e06377; */
+  background-color: #E8F9FF;
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.heading-container{
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4F1C51;
+  margin-left: 20px;
+  font-weight: 700;
+  
+}
+
+
+.data-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.single-container{
+  box-shadow: 1px 1px 5px black;
+  padding: 10px;
+}
