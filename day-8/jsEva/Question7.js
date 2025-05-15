@@ -19,17 +19,25 @@ const products = [
 function groupAndSortProducts(products) {
 
 
-    let res = products.reduce((acc, val) => {
+   let res = products.reduce((acc, val) => {
+       
+    if(!acc[val.category]){
 
-        if (!acc[val.category]) {
-            val.category = [];
-        }
-        acc[val.category].push(val)
+        acc[val.category] = [];
+    }
 
-        return acc;
-    }, {})
+    acc[val.category].push(val);
 
-    console.log(res);
+    return acc
+   }, {})
+
+   
+   for(let key in res){
+
+    res[key].sort((a, b) => b.rating - a.rating);
+   }
+
+   console.log(res);
 }
 
 

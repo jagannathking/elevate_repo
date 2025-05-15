@@ -37,7 +37,11 @@ const supermarketData = {
 
 function findProductDetails(supermarketData) {
     
-
+   for(let key in supermarketData){
+    if(key === products){
+      
+    }
+   }
 }
 
 findProductDetails(supermarketData)
