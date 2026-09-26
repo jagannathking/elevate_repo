@@ -16,13 +16,15 @@ export const createTodo = async (req, res) => {
 
         // create todo
         const todo = new Todo({ title });
+         
+        await todo.save();
 
         res.status(200).json({
             success: true,
             message: "todo created successfully",
             todo
         })
-
+     
     } catch (error) {
         res.status(500).json({
             success: false,
@@ -77,7 +79,8 @@ export const getTodo = async (req, res) => {
 
         res.status(200).json({
             success: true,
-            message: "fetched todo successfully"
+            message: "fetched todo successfully",
+            todo
         })
 
     } catch (error) {
@@ -100,7 +103,8 @@ export const updateTodo = async (req, res) => {
 
         res.status(200).json({
             success: false,
-            message: "Todo updated successfully"
+            message: "Todo updated successfully",
+            updateTodo,
         })
 
     } catch (error) {

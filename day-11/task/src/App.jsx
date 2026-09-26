@@ -4,6 +4,7 @@ import Form from './components/Form';
 import TodoItem from './components/TodoItem';
 
 
+
 const App = () => {
   const [allTodos, setAllTodos] = useState([]);
   
@@ -21,6 +22,19 @@ const App = () => {
      setAllTodos(updated);
   }
  
+
+  // Mark all completed
+  const handleMarkAll = () => {
+    const updated = allTodos.map((todo) => ({...todo, completed: !todo.completed}))
+    setAllTodos(updated);
+  }
+
+  // Filter 
+  const handleFilter = () => {
+
+  }
+
+  
   console.log("All Todos -> ", allTodos);
 
   return (
@@ -28,6 +42,23 @@ const App = () => {
           <div>
             <Form  allTodos = {allTodos} setAllTodos = {setAllTodos}/>
           </div>
+         
+         <br></br>
+         {/* Filter by completed or uncompleted */}
+         <div>
+           <select onChange={handleFilter}>
+           <option value=''>filter</option>
+           <option value='completed'>Completed</option>
+           <option value='uncompleted'>Uncompleted</option>
+           </select>
+         </div>
+
+          <br></br>
+         {/* Mark as all completed */}
+        
+         <div>
+          <button onClick={handleMarkAll}>All completed</button>
+         </div>
 
          {/* Show todo */}
           <div>
